@@ -1,6 +1,7 @@
-package com.oboringleb.androidcourse
+package com.oboringleb.androidcourse.ui.onboarding
 
 import androidx.lifecycle.viewModelScope
+import com.oboringleb.androidcourse.ui.base.BaseViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch

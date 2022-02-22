@@ -1,4 +1,4 @@
-package com.oboringleb.androidcourse
+package com.oboringleb.androidcourse.entity
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

@@ -1,4 +1,4 @@
-package com.oboringleb.androidcourse
+package com.oboringleb.androidcourse.ui.base
 
 import androidx.lifecycle.ViewModel
 

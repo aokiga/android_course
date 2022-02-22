@@ -1,4 +1,4 @@
-package com.oboringleb.androidcourse
+package com.oboringleb.androidcourse.ui.onboarding
 
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.oboringleb.androidcourse.databinding.ItemOnboardingTextBinding

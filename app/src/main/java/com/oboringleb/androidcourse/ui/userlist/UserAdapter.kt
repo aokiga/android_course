@@ -1,4 +1,4 @@
-package com.oboringleb.androidcourse
+package com.oboringleb.androidcourse.ui.userlist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.oboringleb.androidcourse.R
+import com.oboringleb.androidcourse.entity.User
 
 class UserAdapter: RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     var userList: List<User> = emptyList()

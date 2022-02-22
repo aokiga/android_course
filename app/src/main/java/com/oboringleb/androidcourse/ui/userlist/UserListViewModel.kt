@@ -1,7 +1,9 @@
-package com.oboringleb.androidcourse
+package com.oboringleb.androidcourse.ui.userlist
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
+import com.oboringleb.androidcourse.data.network.Api
+import com.oboringleb.androidcourse.entity.User
+import com.oboringleb.androidcourse.ui.base.BaseViewModel
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -19,10 +21,6 @@ class UserListViewModel: BaseViewModel() {
         data class Data(val userList: List<User>): ViewState()
     }
 
-    companion object {
-        val LOG_TAG = UserListViewModel::class.java.simpleName
-    }
-
     private val _viewState = MutableStateFlow<ViewState>(ViewState.Loading)
 
     val viewState: Flow<ViewState>
@@ -38,7 +36,7 @@ class UserListViewModel: BaseViewModel() {
 
     private suspend fun loadUsers(): List<User> {
         return withContext(Dispatchers.IO) {
-            Log.d(LOG_TAG, "loadUsers()")
+            Thread.sleep(500L)
             provideApi().getUsers().data
         }
     }

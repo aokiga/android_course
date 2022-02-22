@@ -1,4 +1,4 @@
-package com.oboringleb.androidcourse
+package com.oboringleb.androidcourse.ui.onboarding
 
 import android.os.Bundle
 import android.view.View
@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.exoplayer2.ExoPlayer
@@ -17,9 +18,9 @@ import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
+import com.oboringleb.androidcourse.R
 import com.oboringleb.androidcourse.databinding.FragmentOnboardingBinding
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch
 
 class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
@@ -45,19 +46,12 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
 
         viewBinding.viewPager.setTextPages()
         viewBinding.viewPager.attachDots(viewBinding.onboardingTextTabLayout)
+
         viewBinding.signInButton.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "Нажата кнопка войти",
-                Toast.LENGTH_SHORT
-            ).show()
+            findNavController().navigate(R.id.action_onboardingFragment_to_signInFragment)
         }
         viewBinding.signUpButton.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "Нажата кнопка зарегистрироваться",
-                Toast.LENGTH_SHORT
-            ).show()
+            findNavController().navigate(R.id.action_onboardingFragment_to_signUpFragment)
         }
 
         subscribeToVideoSoundState()
