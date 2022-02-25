@@ -3,6 +3,9 @@ package com.oboringleb.androidcourse.ui.signin
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.LinearInterpolator
+import android.view.animation.RotateAnimation
 import androidx.activity.OnBackPressedCallback
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
@@ -42,6 +45,17 @@ class SignInFragment : BaseFragment(R.layout.fragment_sign_in) {
             )
         }
         subscribeToFormFields()
+        createLogoAnimation()
+    }
+
+    private fun createLogoAnimation() {
+        viewBinding.mknLogoImageView.apply {
+            val rotation = RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+            rotation.interpolator = LinearInterpolator()
+            rotation.duration = 1000L
+            rotation.repeatCount = Animation.INFINITE
+            startAnimation(rotation)
+        }
     }
 
     private fun subscribeToFormFields() {
