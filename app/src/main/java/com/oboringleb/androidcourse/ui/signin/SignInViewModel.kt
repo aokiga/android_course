@@ -6,9 +6,9 @@ import com.oboringleb.androidcourse.ui.base.BaseViewModel
 import kotlinx.coroutines.launch
 
 class SignInViewModel: BaseViewModel() {
-    fun signIn() {
+    fun signIn(email: String, password: String) {
         viewModelScope.launch {
-            AuthRepository.signIn()
+            AuthRepository.signIn(email, password)
         }
     }
 }

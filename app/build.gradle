@@ -86,4 +86,6 @@ dependencies {
     def adapterDelegatesVersion = '4.3.0'
     implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterDelegatesVersion"
     implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterDelegatesVersion"
+
+    implementation "dev.chrisbanes.insetter:insetter:0.6.0"
 }
