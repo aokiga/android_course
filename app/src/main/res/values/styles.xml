@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.AndroidCourse.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Widget.AndroidCourse.Button.Primary">
+        <item name="android:backgroundTint">@color/button_primary_color</item>
+    </style>
+    <style name="Widget.AndroidCourse.Button.Secondary">
+        <item name="android:backgroundTint">@color/button_secondary_color</item>
+    </style>
+    <style name="Widget.AndroidCourse.Button.Back">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:src">@drawable/ic_arrow_back_black_24dp</item>
+    </style>
+
+    <style name="Widget.AndroidCourse.LinkButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxWidth">300dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="android:textColor">@color/brand_blue</item>
+    </style>
+
+    <style name="Widget.AndroidCourse.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:buttonTint">@color/brand_blue</item>
+    </style>
+
+    <style name="Widget.AndroidCourse.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/brand_blue</item>
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.AndroidCourse.VerificationCodeEditText" parent="">
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+    </style>
+
+</resources>
