@@ -18,6 +18,7 @@ import com.oboringleb.androidcourse.databinding.FragmentSignUpBinding
 import com.oboringleb.androidcourse.ui.base.BaseFragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.oboringleb.androidcourse.util.setClubRulesText
+import dev.chrisbanes.insetter.applyInsetter
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collect
 
@@ -50,6 +51,12 @@ class SignUpFragment : BaseFragment(R.layout.fragment_sign_up) {
                 email = viewBinding.emailEditText.text?.toString() ?: "",
                 password = viewBinding.passwordEditText.text?.toString() ?: ""
             )
+        }
+        viewBinding.backButton.applyInsetter {
+            type(statusBars = true) { margin() }
+        }
+        viewBinding.signUpButton.applyInsetter {
+            type(navigationBars = true) { margin() }
         }
         subscribeToEvents()
         subscribeToFormFields()

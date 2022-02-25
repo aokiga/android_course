@@ -20,6 +20,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.oboringleb.androidcourse.R
 import com.oboringleb.androidcourse.databinding.FragmentOnboardingBinding
+import dev.chrisbanes.insetter.applyInsetter
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -42,6 +43,14 @@ class OnboardingFragment: Fragment(R.layout.fragment_onboarding) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewBinding.volumeControlButton.applyInsetter {
+            type(statusBars = true) { margin() }
+        }
+        viewBinding.signUpButton.applyInsetter {
+            type(navigationBars = true) { margin() }
+        }
+
         viewBinding.playerView.player = player
 
         viewBinding.viewPager.setTextPages()

@@ -6,6 +6,7 @@
 
     <ImageButton
         android:id="@+id/backButton"
+        style="@style/Widget.AndroidCourse.Button.Back"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -26,6 +27,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextInputLayout"
+        style="@style/Widget.AndroidCourse.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
@@ -36,6 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/mknLogoImageView">
 
         <com.google.android.material.textfield.TextInputEditText
+            style="@style/Widget.AndroidCourse.TextInputLayout"
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -43,6 +46,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.AndroidCourse.TextInputLayout"
         android:id="@+id/passwordTextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,6 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            style="@style/Widget.AndroidCourse.TextInputLayout"
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,6 +68,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        style="@style/Widget.AndroidCourse.Button.Primary"
         android:id="@+id/signInButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

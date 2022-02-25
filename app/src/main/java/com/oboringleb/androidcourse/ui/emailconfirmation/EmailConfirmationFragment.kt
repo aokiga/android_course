@@ -16,6 +16,7 @@ import com.oboringleb.androidcourse.ui.base.BaseFragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.oboringleb.androidcourse.R
 import com.oboringleb.androidcourse.util.getSpannedString
+import dev.chrisbanes.insetter.applyInsetter
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -30,6 +31,12 @@ class EmailConfirmationFragment : BaseFragment(R.layout.fragment_email_confirmat
         super.onViewCreated(view, savedInstanceState)
         viewBinding.backButton.setOnClickListener {
             findNavController().popBackStack()
+        }
+        viewBinding.backButton.applyInsetter {
+            type(statusBars = true) { margin() }
+        }
+        viewBinding.confirmButton.applyInsetter {
+            type(navigationBars = true) { margin() }
         }
         viewBinding.confirmButton.setOnClickListener {
             viewModel.confirmCode("","","","","", "") // TODO()
