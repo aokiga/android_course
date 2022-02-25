@@ -48,7 +48,7 @@ dependencies {
 
 
     def retrofitVersion = "2.9.0"
-    def okhttpVersion = '5.0.0-alpha.4'
+    def okhttpVersion = '4.9.0'
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
@@ -65,6 +65,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.activity:activity-ktx:1.4.0"
     implementation "androidx.fragment:fragment-ktx:1.4.1"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     def glideVersion = "4.11.0"
     implementation "com.github.bumptech.glide:glide:$glideVersion"
@@ -76,7 +77,15 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-core:$exoPlayerVersion"
     implementation "com.google.android.exoplayer:exoplayer-ui:$exoPlayerVersion"
 
+    implementation "com.jakewharton.timber:timber:4.7.1"
+
+    def navigationVersion = "2.4.0-beta02"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
     def adapterDelegatesVersion = '4.3.0'
     implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterDelegatesVersion"
     implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterDelegatesVersion"
+
+    implementation "dev.chrisbanes.insetter:insetter:0.6.0"
 }
