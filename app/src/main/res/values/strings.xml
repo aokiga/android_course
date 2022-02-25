@@ -31,4 +31,8 @@
     <string name="email_confirmation_open_mail_app_button_text">Перейти в почту</string>
     <string name="email_confirmation_send_code_again_button_text">Выслать код повторно</string>
     <string name="email_confirmation_send_code_again_hint_template">Подождите %s</string>
+
+    <string name="smiley_heart">❤</string>
+    <string name="smiley_laugh">😂</string>
+    <string name="smiley_poo">💩</string>
 </resources>

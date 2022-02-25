@@ -4,15 +4,147 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
+    <ImageView
+        android:id="@+id/userImage"
+        android:src="@drawable/ic_android_white_24dp"
+        app:layout_constraintBottom_toTopOf="@id/nameText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:resize_mode="zoom"
+        android:layout_width="250dp"
+        android:layout_margin="30dp"
+        android:layout_marginTop="48dp"
+        android:layout_height="250dp"
+        />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile"
-        android:gravity="center"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toTopOf="@id/nameText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="140dp"
+        />
+
+    <ImageButton
+        android:id="@+id/logoutButton"
+        android:contentDescription="close application"
+        android:src="@drawable/ic_close_24dp"
+        style="@style/Widget.AndroidCourse.Button.Secondary"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/sign_up_sign_up_button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/userImage"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/groupText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameText" />
+
+    <androidx.emoji2.widget.EmojiButton
+        android:text="@string/smiley_laugh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/smiley_laugh_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/groupText"
+        app:layout_constraintBottom_toTopOf="@id/laugh_counter"
+        android:layout_marginTop="40dp"
+        />
+
+
+    <androidx.emoji2.widget.EmojiButton
+        android:text="@string/smiley_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/smiley_heart_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/smiley_laugh_button"
+        app:layout_constraintTop_toBottomOf="@id/groupText"
+        app:layout_constraintBottom_toTopOf="@id/heart_counter"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        />
+
+    <androidx.emoji2.widget.EmojiButton
+        android:text = "@string/smiley_poo"
+        android:id="@+id/smiley_poo_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/poo_counter"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toEndOf="@id/smiley_laugh_button"
+        app:layout_constraintTop_toBottomOf="@id/groupText" />
+
+    <TextView
+        android:id="@+id/laugh_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:layout_marginBottom="24dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/smiley_laugh_button"/>
+
+    <TextView
+        android:id="@+id/heart_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:layout_constraintEnd_toStartOf="@id/laugh_counter"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/smiley_heart_button" />
+
+    <TextView
+        android:id="@+id/poo_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginBottom="24dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.992"
+        app:layout_constraintStart_toStartOf="@id/laugh_counter"
+        app:layout_constraintTop_toBottomOf="@id/smiley_poo_button" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout> 

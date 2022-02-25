@@ -88,4 +88,11 @@ dependencies {
     implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterDelegatesVersion"
 
     implementation "dev.chrisbanes.insetter:insetter:0.6.0"
+
+    def emoji2_version = "1.2.0-alpha01"
+
+    implementation "androidx.emoji2:emoji2:$emoji2_version"
+    implementation "androidx.emoji2:emoji2-views:$emoji2_version"
+    implementation "androidx.emoji2:emoji2-views-helper:$emoji2_version"
+
 }
