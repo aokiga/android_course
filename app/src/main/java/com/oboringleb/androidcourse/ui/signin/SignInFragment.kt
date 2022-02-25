@@ -3,6 +3,9 @@ package com.oboringleb.androidcourse.ui.signin
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.LinearInterpolator
+import android.view.animation.RotateAnimation
 import androidx.activity.OnBackPressedCallback
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
@@ -11,6 +14,7 @@ import com.oboringleb.androidcourse.R
 import com.oboringleb.androidcourse.databinding.FragmentSignInBinding
 import com.oboringleb.androidcourse.ui.base.BaseFragment
 import by.kirich1409.viewbindingdelegate.viewBinding
+import dev.chrisbanes.insetter.applyInsetter
 
 class SignInFragment : BaseFragment(R.layout.fragment_sign_in) {
 
@@ -32,6 +36,9 @@ class SignInFragment : BaseFragment(R.layout.fragment_sign_in) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewBinding.backButton.applyInsetter {
+            type(statusBars = true) { margin() }
+        }
         viewBinding.backButton.setOnClickListener {
             onBackButtonPressed()
         }
@@ -41,7 +48,23 @@ class SignInFragment : BaseFragment(R.layout.fragment_sign_in) {
                 password = viewBinding.passwordEditText.text?.toString() ?: ""
             )
         }
+        viewBinding.signInButton.applyInsetter {
+            type(navigationBars = true) {
+                margin()
+            }
+        }
         subscribeToFormFields()
+        createLogoAnimation()
+    }
+
+    private fun createLogoAnimation() {
+        viewBinding.mknLogoImageView.apply {
+            val rotation = RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+            rotation.interpolator = LinearInterpolator()
+            rotation.duration = 1000L
+            rotation.repeatCount = Animation.INFINITE
+            startAnimation(rotation)
+        }
     }
 
     private fun subscribeToFormFields() {
